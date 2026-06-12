@@ -1,6 +1,21 @@
 // Rewrite the factorial function using a `for` loop.
-pub fn factorial(n: u32) -> u32 {
-    todo!()
+// pub fn factorial(n: u32) -> u32 {
+//     let mut a = 1;
+//     if n==1||n==0 { return 1 }
+//     for i in 2..(n+1) {
+//         a = a*i;
+//     }
+//     return a
+// }
+// solved by myself (a good syntactical impl below)
+
+pub fn factorial(input_by_the_user: u32) -> u32 {
+    let mut accumulator = 1;
+    if input_by_the_user==1||input_by_the_user==0 { return 1 }
+    for an_element_in_iterator in 2..(input_by_the_user+1) {
+        accumulator = accumulator*an_element_in_iterator;
+    }
+    return accumulator
 }
 
 #[cfg(test)]
