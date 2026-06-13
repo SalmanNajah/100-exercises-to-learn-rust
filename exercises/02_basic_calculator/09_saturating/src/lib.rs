@@ -1,9 +1,13 @@
 pub fn factorial(n: u32) -> u32 {
-    let mut result = 1;
+    let mut result:u32 = 1;
     for i in 1..=n {
         // Use saturating multiplication to stop at the maximum value of u32
         // rather than overflowing and wrapping around
-        result *= i;
+        result = result.saturating_mul(i); 
+        // I - the above one will give error --> "can't call method `saturating_mul` on ambiguous numeric type `{integer}`" when we have no type defined for the result here --> `let mut result = 1;` so use `let mut result:u32 = 1;`
+
+        // result = i.saturating_mul(result); 
+        // II - the above one works even if we have `let mut result = 1;` since result is passed onto the `saturating_mul` method.
     }
     result
 }
