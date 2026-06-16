@@ -29,12 +29,24 @@ pub mod ticket {
                 status,
             }
         }
-
         // TODO: Add three public methods to the `Ticket` struct:
         //  - `title` that returns the `title` field.
         //  - `description` that returns the `description` field.
         //  - `status` that returns the `status` field.
+
+        pub fn title(self) -> String {
+            return self.title
+        }
+
+        pub fn description(self) -> String {
+            return self.description
+        }
+
+        pub fn status(self) -> String {
+            return self.status
+        }
     }
+    // got it right in the first attempt
 }
 
 #[cfg(test)]
